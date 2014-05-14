@@ -11,7 +11,7 @@ var express = require('express'),
 var app = express();
 
 // Set up Mongo connection
-mongo.connect('mongodb://localhost/hf_scammers');
+mongo.connect('mongodb://dhf_demo:dhf_demo@ds043329.mongolab.com:43329/dhf_demo_hfsd');
 
 // We need a model, to interact with Mongo
 var ScammerSchema = new mongo.Schema({
