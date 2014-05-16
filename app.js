@@ -182,7 +182,7 @@ app.get('/scammers', function (req, res) {
 app.post('/scammers/reset', function (req, res) {
     mongoose.connection.db.dropCollection('scammers', function () {
         // Seed data stored in seed_data.js
-        var reports = require('./seed_data').seed_data.reports
+        var reports = require('./data/seed_data').seed_data.reports
             len = reports.length - 1;
 
         /**
