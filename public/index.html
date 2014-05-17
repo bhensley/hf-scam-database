@@ -128,7 +128,7 @@
                 <input type="text" class="form-control text-center" ng-model="sStat" placeholder="Status">
             </div>
         </div>
-        <div class="row clearfix scammers-list" style="margin-top: 5px" ng-repeat="scammer in scammers | startAt:curPage * recordsPerPage | limitTo:recordsPerPage | filter:{ thread_id: sTid, plaintiff_id: sPid, defendant_id: sDid, severity: sSev, status: sStat }">
+        <div class="row clearfix scammers-list" style="margin-top: 5px" ng-repeat="scammer in scammers | filter:{ thread_id: sTid, plaintiff_id: sPid, defendant_id: sDid, severity: sSev, status: sStat } | startAt:curPage * recordsPerPage | limitTo:recordsPerPage">
             <div class="col-md-2 column text-center">
                 <a href="http://hackforums.net/viewthread?tid={{ scammer.thread_id }}">{{ scammer.thread_id }}</a>
             </div>
