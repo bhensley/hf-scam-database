@@ -22,7 +22,8 @@ var express     = require('express'),
  */
 var app = express();
 
-var config = require('./config');
+// Uncomment the below if using a config file
+//var config = require('./config');
 
 
 
