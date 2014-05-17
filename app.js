@@ -33,7 +33,7 @@ var config = require('./config');
  * take in data we don't want (validations).
  */
 // Set up Mongo connection
-mongoose.connect(config.mongo.conn_string);
+mongoose.connect(process.env.MONGO_CONN_URL || config.mongo.conn_string);
 
 // We need a model, to interact with Mongo
 var ScammerSchema = new mongoose.Schema({
