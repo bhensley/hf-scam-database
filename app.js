@@ -110,6 +110,7 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
+app.use(express.cookieParser('hfsdb'));
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -208,7 +209,8 @@ app.post('/scammers/reset', function (req, res) {
         saveRecord(len);
 
         // No need to wait, send the user on and let the saves just happen
-        res.redirect('?success');
+        res.cookie('action-result', 'success');
+        res.redirect('/');
     });
 });
 
@@ -219,7 +221,8 @@ app.post('/scammers', function (req, res) {
         if (err)
             res.send(400);  // Couldn't save, probably due to validation errors
         else
-            res.redirect('/?success'); // Success
+            res.cookie('action-result', 'success');
+            res.redirect('/');
     });
 });
 
