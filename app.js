@@ -192,15 +192,7 @@ app.post('/scammers/reset', function (req, res) {
          *  Recursively iterate over the seed data, saving it to the DB.
          */
         function saveRecord(i) {
-            Scammer.create({
-                thread_id: reports[i].thread_id,
-                plaintiff_id: reports[i].plaintiff_id,
-                plaintiff_name: reports[i].plaintiff_name,
-                defendant_id: reports[i].defendant_id,
-                defendant_name: reports[i].defendant_name,
-                severity: reports[i].severity,
-                status: reports[i].status
-            }, function (err, scammer) {
+            Scammer.create(req.body, function (err, scammer) {
                 if (err)
                     throw err;
 
@@ -223,15 +215,7 @@ app.post('/scammers/reset', function (req, res) {
 // POST /scammers
 app.post('/scammers', function (req, res) {
     // Create a new Scammer record using the form data.
-    Scammer.create({
-        thread_id: req.body.thread_id,
-        plaintiff_id: req.body.plaintiff_id,
-        plaintiff_name: req.body.plaintiff_name,
-        defendant_id: req.body.defendant_id,
-        defendant_name: req.body.defendant_name,
-        severity: req.body.severity,
-        status: req.body.status
-    }, function (err, scammer) {
+    Scammer.create(req.body, function (err, scammer) {
         if (err)
             res.send(400);  // Couldn't save, probably due to validation errors
         else
