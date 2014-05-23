@@ -23,7 +23,7 @@ var express     = require('express'),
 var app = express();
 
 // Uncomment the below if using a config file
-//var config = require('./config');
+var config = require('./config');
 
 
 
@@ -74,7 +74,9 @@ var ScammerSchema = new mongoose.Schema({
     
     severity: {
         type: Number,
-        trim: true
+        trim: true,
+        validate: /^\d+[\.\d{1,2}]*$/,
+        min: 1
     },
 
     status: {

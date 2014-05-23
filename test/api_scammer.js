@@ -84,5 +84,19 @@ describe('API', function () {
                     done();
                 });
         });
+
+        it('should only accept dollar amounts with more than two decimal points', function (done) {
+            entry_a.severity = 123.232;
+
+            req(uri).post('/scammers')
+                .send(entry_a)
+                .end(function (err, res) {
+                    if (err)
+                        throw err;
+
+                    res.should.have.status(400);
+                    done();
+                });
+        });
     });
 });
