@@ -23,7 +23,7 @@ var express     = require('express'),
 var app = express();
 
 // Uncomment the below if using a config file
-var config = require('./config');
+//var config = require('./config');
 
 
 
