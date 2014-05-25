@@ -27,6 +27,22 @@ ScamDatabase.filter "startAt", ->
     return (input, start) ->
         input.slice parseInt(start)  if input instanceof Object
 
+displayRibbon = (rib) ->
+    $(rib).show();
+    setTimeout(hideRibbon, 2500);
+
+hideRibbon = ->
+    $('#sub-success, #sub-failure').fadeOut('slow');
+
 $(document).ready ->
-    $("#sub-success").toggle()  if window.location.search is "?success"
-    $("#sub-failure").toggle()  if window.location.search.match(/\?errors=true(\w+)*$/)
+    if document.cookie.match(/action-result=(\w+)/)
+      switch RegExp.$1
+        when "success"
+          displayRibbon "#sub-success"
+
+        when "failure"
+          displayRibbon "#sub-failure"
+
+      document.cookie = "action-result=null"
+
+      return

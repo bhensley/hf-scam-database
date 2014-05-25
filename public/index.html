@@ -11,31 +11,6 @@
     <script type="text/javascript"src="scripts/angular.min.js"></script>
     <script type="text/javascript"src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/application.js"></script>
-
-    <script>
-
-    function displayRibbon (rib) {
-        $(rib).show();
-        setTimeout(hideRibbon, 2500);
-    }
-
-    function hideRibbon () {
-        $('#sub-success').fadeOut('slow');
-    }
-
-    $(document).ready(function () {
-        if (document.cookie.match(/action-result=(\w+)/)) {
-            switch (RegExp.$1) {
-                case 'success':
-                    displayRibbon('#sub-success');
-                    break;
-            }
-
-            document.cookie = 'action-result=null';
-        }
-    })
-
-    </script>
 </head>
 
 <body ng-controller="ScammerController">
