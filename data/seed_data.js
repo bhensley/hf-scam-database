@@ -7,7 +7,7 @@ exports.seed_data = {
             "plaintiff_name": "TaylorV",
             "defendant_id": 1323486,
             "defendant_name": "Conspiracy Theorist",
-            "severity": undefined,
+            "severity": 1,
             "status": "open"
         }, 
         {
@@ -70,7 +70,7 @@ exports.seed_data = {
             "plaintiff_name": "Worked",
             "defendant_id": 2219483,
             "defendant_name": "",
-            "severity": undefined,
+            "severity": 1,
             "status": "open"
         }, 
         {
@@ -151,7 +151,7 @@ exports.seed_data = {
             "plaintiff_name": "p0iz0ner",
             "defendant_id": 300035,
             "defendant_name": "",
-            "severity": undefined,
+            "severity": 1,
             "status": "open"
         }, 
         {
@@ -169,7 +169,7 @@ exports.seed_data = {
             "plaintiff_name": "ATD",
             "defendant_id": 1644378,
             "defendant_name": "",
-            "severity": undefined,
+            "severity": 1,
             "status": "open"
         }, 
         {
@@ -196,7 +196,7 @@ exports.seed_data = {
             "plaintiff_name": "almightythor101",
             "defendant_id": 1963781,
             "defendant_name": "",
-            "severity": undefined,
+            "severity": 1,
             "status": "open"
         }, 
         {
@@ -205,7 +205,7 @@ exports.seed_data = {
             "plaintiff_name": "vFUZZYv",
             "defendant_id": 1452953,
             "defendant_name": "",
-            "severity": undefined,
+            "severity": 1,
             "status": "open"
         }, 
         {
@@ -250,7 +250,7 @@ exports.seed_data = {
             "plaintiff_name": "Hypo",
             "defendant_id": 1532380,
             "defendant_name": "",
-            "severity": undefined,
+            "severity": 1,
             "status": "open"
         }, 
         {

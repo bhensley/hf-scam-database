@@ -192,15 +192,16 @@ app.post('/scammers/reset', function (req, res) {
         /**
          *  Recursively iterate over the seed data, saving it to the DB.
          */
-        function saveRecord(i) {
-            Scammer.create(req.body, function (err, scammer) {
+        function saveRecord() {
+            console.log(len);
+            Scammer.create(reports[len], function (err, scammer) {
                 if (err)
                     throw err;
 
-                --i;
+                --len;
 
-                if (i >= 0) {
-                    saveRecord(i);
+                if (len >= 0) {
+                    saveRecord();
                 }
             });
         }
