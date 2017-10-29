@@ -3,20 +3,23 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "precompile:css": "sass public/css/application.css.sass public/css/application.css --style compressed",
-    "precompile:js": "",
+    "postinstall": "grunt sass:production",
     "test": "make test",
-    "start": "npm run-script precompile:css & node app.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "3.5.1",
     "jade": "*",
-    "mongoose": "~3.8.9",
+    "mongoose": "~4.4",
     "should": "~3.3.1",
     "mocha": "~1.18.2",
     "assert": "~1.1.1",
     "supertest": "~0.12.1",
-    "mongoose-unique-validator": "~0.3.0"
+    "mongoose-unique-validator": "~0.3.0",
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-watch": "*"
   },
   "enginse": {
     "node": "6.11.5"

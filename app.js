@@ -34,7 +34,7 @@ var app = express();
  * take in data we don't want (validations).
  */
 // Set up Mongo connection
-mongoose.connect(process.env.MONGO_CONN_URL || config.mongo.conn_string);
+mongoose.connect(process.env.MONGO_CONN_URL || "mongodb://dhf_demo:dhf_demo@ds239965.mlab.com:39965/heroku_5wk739fv" || config.mongo.conn_string);
 
 // We need a model, to interact with Mongo
 var ScammerSchema = new mongoose.Schema({
@@ -209,8 +209,7 @@ app.post('/scammers/reset', function (req, res) {
         saveRecord(len);
 
         // No need to wait, send the user on and let the saves just happen
-        res.cookie('action-result', 'success');
-        res.redirect('/');
+        res.cookie('action-result', 'success').redirect('/');
     });
 });
 
@@ -219,10 +218,9 @@ app.post('/scammers', function (req, res) {
     // Create a new Scammer record using the form data.
     Scammer.create(req.body, function (err, scammer) {
         if (err)
-            res.send(400);  // Couldn't save, probably due to validation errors
+            res.cookie('action-result', 'failure').redirect('/');  // Couldn't save, probably due to validation errors
         else
-            res.cookie('action-result', 'success');
-            res.redirect('/');
+            res.cookie('action-result', 'success').redirect('/');
     });
 });
 
