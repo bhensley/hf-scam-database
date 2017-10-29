@@ -19,5 +19,7 @@
     "mongoose-unique-validator": "~0.3.0",
     "node-sass": "2.81.0"
   },
-  "engine": "node 6.11.5"
+  "enginse": {
+    "node": "6.11.5"
+  }
 }
