@@ -16,8 +16,7 @@
     "mocha": "~1.18.2",
     "assert": "~1.1.1",
     "supertest": "~0.12.1",
-    "mongoose-unique-validator": "~0.3.0",
-    "node-sass": "2.81.0"
+    "mongoose-unique-validator": "~0.3.0"
   },
   "enginse": {
     "node": "6.11.5"
