@@ -1,23 +1,25 @@
 module.exports = (grunt) => {
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+
     sass: {
       development: {
-        options: {
-        },
-        files: {
-          'public/css/application.css' : 'assets/css/application.css.sass'
+        dist: {
+          files: {
+            'public/css/application.css' : 'assets/css/application.css.sass'
+          }
         }
       },
       production: {
-        options: {
-        },
-        files: {
-          'public/css/application.css' : 'assets/css/application.css.sass'
+        dist: {
+          files: {
+            'public/css/application.css' : 'assets/css/application.css.sass'
+          }
         }
       }
     },
     watch: {
-      files: ['<%= sass.files %>'],
+      files: ['**/*.scss'],
       tasks: ['sass']
     }
   });
