@@ -18,5 +18,6 @@
     "supertest": "~0.12.1",
     "mongoose-unique-validator": "~0.3.0",
     "node-sass": "2.81.0"
-  }
+  },
+  "engine": "node 6.11.5"
 }
